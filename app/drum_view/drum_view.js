@@ -29,13 +29,31 @@ angular.module('myApp.drum-machine', ['ngRoute'])
         return instruments;
     };
     
+    var setupDefaultPattern = function() {
+        instruments[0].beats[0] = true;
+        instruments[0].beats[8] = true;
+        
+        instruments[1].beats[4] = true;
+        instruments[1].beats[12] = true;
+        
+        instruments[2].beats[2] = true;
+        instruments[2].beats[6] = true;
+        instruments[2].beats[10] = true;
+        
+        instruments[3].beats[14] = true;
+    };
+    
+    setupDefaultPattern();
+    
     $scope.tempo = 120;
     
     var promise;
     $scope.playIndex = -1;
     
     $scope.playBeats = function() {
-        var secondsPerBeat = (1 / ($scope.tempo / 60.0)) / 4;
+        if(!$scope.tempo || $scope.tempo < 0) {
+            $scope.tempo = 120;
+        }
         
         $scope.playIndex = 0;
         promise = $interval(function() {
@@ -48,7 +66,11 @@ angular.module('myApp.drum-machine', ['ngRoute'])
             if($scope.playIndex >= BEATS_PER_INSTRUMENT) {
               $scope.playIndex = 0;  
             }
-        }, secondsPerBeat * 1000);
+        }, getDelayInMs());
+    };
+    
+    var getDelayInMs = function() {
+        return ((60000.0 / $scope.tempo) / 4);
     };
     
     $scope.stopBeats = function() {
@@ -57,6 +79,6 @@ angular.module('myApp.drum-machine', ['ngRoute'])
     };
     
     $scope.isPlaying = function() {
-        return $scope.playIndex != -1;
+        return $scope.playIndex !== -1;
     };
 }]);

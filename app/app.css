@@ -1,5 +1,11 @@
 /* app css stylesheet */
 
+.drum-machine {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .header {
     margin-left: 40px;
 }
@@ -8,17 +14,17 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     display: inline-block;
+}
+
+.tempo {
+    width: 42px;
+    margin-left: 5px;
+    padding-left: 2px;
 }
 
 ol.instrument-list {
     list-style-type: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 li.instrument {
