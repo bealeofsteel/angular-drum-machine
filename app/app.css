@@ -1,0 +1,9 @@
+/* app css stylesheet */
+
+ol.instrument-list {
+    list-style-type: none;
+}
+
+.instrument-name {
+    cursor: pointer;
+}

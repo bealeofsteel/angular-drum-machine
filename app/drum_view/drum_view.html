@@ -1,0 +1,6 @@
+<h1>Drum Machine</h1>
+<ol class="instrument-list">
+    <li ng-repeat="instrument in getInstruments()">
+        <span class="instrument-name" ng-click="instrument.play()">{{instrument.display}}</span>
+    </li>
+</ol>
