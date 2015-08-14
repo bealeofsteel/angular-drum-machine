@@ -1,9 +1,57 @@
 /* app css stylesheet */
 
+.header {
+    margin-left: 40px;
+}
+
+.play-button {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    display: inline-block;
+}
+
 ol.instrument-list {
     list-style-type: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+li.instrument {
+    margin-bottom: 2px;
+    
 }
 
 .instrument-name {
     cursor: pointer;
+    vertical-align: middle;
+    width: 90px;
+    display: inline-block;
+}
+
+.beat {
+    background: lightgray;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.beat.enabled {
+    background: red
+}
+
+.beat.current {
+    box-shadow:0px 0px 0px 1px blue inset;
+}
+
+.beat.new-measure {
+    margin-left: 5px;
 }

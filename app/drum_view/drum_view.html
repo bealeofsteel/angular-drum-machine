@@ -1,6 +1,13 @@
-<h1>Drum Machine</h1>
+<div class="header">
+    <h1 class="title">Beats by Beale</h1>
+
+    <div class="play-button" ng-click="playBeats()" ng-hide="isPlaying()">Play</div>
+    <div class="play-button" ng-click="stopBeats()" ng-show="isPlaying()">Stop</div>
+</div>
+
 <ol class="instrument-list">
-    <li ng-repeat="instrument in getInstruments()">
+    <li ng-repeat="instrument in getInstruments()" class="instrument">
         <span class="instrument-name" ng-click="instrument.play()">{{instrument.display}}</span>
+        <div ng-repeat="beat in instrument.beats track by $index" class="beat" ng-class="{'enabled': beat, 'current': playIndex === $index, 'new-measure': $index % 4 === 0}" ng-click="instrument.beats[$index] = !instrument.beats[$index]"></div>
     </li>
 </ol>
