@@ -38,6 +38,7 @@ angular.module('myApp.drum-machine', ['ngRoute'])
     
     var setupDefaultPattern = function() {
         instruments[0].beats[0] = true;
+        instruments[0].beats[3] = true;
         instruments[0].beats[8] = true;
         
         instruments[1].beats[4] = true;
