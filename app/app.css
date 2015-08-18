@@ -4,17 +4,17 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-}
-
-.header {
     margin-left: 40px;
 }
 
-.play-button {
+.button {
     cursor: pointer;
-    font-size: 20px;
     font-weight: 600;
     display: inline-block;
+}
+
+.button.play {
+    font-size: 20px;
 }
 
 .tempo {
@@ -25,6 +25,7 @@
 
 ol.instrument-list {
     list-style-type: none;
+    padding: 0;
 }
 
 li.instrument {
@@ -60,4 +61,15 @@ li.instrument {
 
 .beat.new-measure {
     margin-left: 5px;
+}
+
+.url-copy {
+    font-weight: 200;
+}
+
+.url {
+    width: 300px;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 0;
 }

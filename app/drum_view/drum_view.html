@@ -1,14 +1,12 @@
 <div class="drum-machine">
-    <div class="header">
-        <h1 class="title">Beats by Beale</h1>
+    <h1 class="title">Beats by Beale</h1>
 
-        <div class="play-button" ng-click="playBeats()" ng-hide="isPlaying()">Play</div>
-        <div class="play-button" ng-click="stopBeats()" ng-show="isPlaying()">Stop</div>
-        
-        <div>
-            Tempo
-            <input type="number" ng-model="tempo" class="tempo">
-        </div>
+    <div class="button play" ng-click="playBeats()" ng-hide="isPlaying()">Play</div>
+    <div class="button play" ng-click="stopBeats()" ng-show="isPlaying()">Stop</div>
+
+    <div>
+        Tempo
+        <input type="number" ng-model="tempo" class="tempo">
     </div>
 
     <ol class="instrument-list">
@@ -17,4 +15,12 @@
             <div ng-repeat="beat in instrument.beats track by $index" class="beat" ng-class="{'enabled': beat, 'current': playIndex === $index, 'new-measure': $index % 4 === 0}" ng-click="instrument.beats[$index] = !instrument.beats[$index]"></div>
         </li>
     </ol>
+    
+    <div class="button" ng-click="generateShareUrl(); showUrl = true;" ng-init="showUrl = false">
+        {{showUrl ? "Update URL" : "Share your beat"}}
+        <div ng-show="showUrl">
+            <span class="url-copy">Copy and paste this URL:</span>
+            <input class="url" type="text" ng-model="shareUrl">
+        </div>
+    </div>
 </div>
