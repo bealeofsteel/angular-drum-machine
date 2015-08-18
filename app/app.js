@@ -5,7 +5,4 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.drum-machine',
   'myApp.instruments'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/drum'});
-}]);
+]);
