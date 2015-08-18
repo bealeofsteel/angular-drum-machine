@@ -114,17 +114,17 @@ angular.module('myApp.drum-machine', [])
             $scope.tempo = 120;
         }
         
-        $scope.playIndex = 0;
         promise = $interval(function() {
+            $scope.playIndex++;
+            if($scope.playIndex >= BEATS_PER_INSTRUMENT) {
+              $scope.playIndex = 0;  
+            }
+            
             angular.forEach(instruments, function(instrument) {
                 if(instrument.beats[$scope.playIndex]) {
                     instrument.play();
                 }
             });
-            $scope.playIndex++;
-            if($scope.playIndex >= BEATS_PER_INSTRUMENT) {
-              $scope.playIndex = 0;  
-            }
         }, getDelayInMs());
     };
     
