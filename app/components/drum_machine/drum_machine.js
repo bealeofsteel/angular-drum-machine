@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('myApp.drum-machine', ['ngRoute'])
+angular.module('myApp.drum-machine', [])
 
 .directive('drumMachine', function () {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/drum_machine/drum_machine.html',
+        templateUrl: 'components/drum_machine/drum_machine.html',
         controller: 'DrumCtrl'
     };
 })
