@@ -14,7 +14,7 @@ angular.module('myApp.instruments', [])
         }
         
         this.play = function() {
-            new Audio('app/assets/audio/' + filename + '.wav').play();
+            new Audio('app/assets/audio/' + filename + '.mp3').play();
         };
         
         this.getBeatsForUrl = function() {
