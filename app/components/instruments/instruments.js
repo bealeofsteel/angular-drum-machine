@@ -8,13 +8,14 @@ angular.module('myApp.instruments', [])
         this.display = display;
         this.filename = filename;
         this.beats = [];
+        this.audio = new Audio('app/assets/audio/' + filename + '.wav');
         
         for(var i = 0; i < BEATS_PER_INSTRUMENT; i++) {
             this.beats.push(false);
         }
         
         this.play = function() {
-            new Audio('app/assets/audio/' + filename + '.wav').play();
+            this.audio.play();
         };
         
         this.getBeatsForUrl = function() {
