@@ -2,13 +2,13 @@
 
 angular.module('myApp.drum-machine', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/drum', {
-    templateUrl: 'drum_view/drum_view.html',
-    controller: 'DrumCtrl',
-    reloadOnSearch: false
-  });
-}])
+.directive('drumMachine', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'drum_machine/drum_machine.html',
+        controller: 'DrumCtrl'
+    };
+})
 
 .controller('DrumCtrl', ['$scope', 'Instrument', 'BEATS_PER_INSTRUMENT', '$interval', '$window', '$location', function($scope, Instrument, BEATS_PER_INSTRUMENT, $interval, $window, $location) {
     
