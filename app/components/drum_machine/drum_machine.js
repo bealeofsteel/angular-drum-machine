@@ -5,7 +5,7 @@ angular.module('myApp.drum-machine', [])
 .directive('drumMachine', function () {
     return {
         restrict: 'E',
-        templateUrl: 'components/drum_machine/drum_machine.html',
+        templateUrl: 'app/components/drum_machine/drum_machine.html',
         controller: 'DrumCtrl'
     };
 })
